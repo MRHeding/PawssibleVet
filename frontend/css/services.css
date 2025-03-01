@@ -1,0 +1,166 @@
+/* Services Page Specific Styles */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 1px solid var(--light-blue);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.service-item img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    filter: invert(31%) sepia(98%) saturate(1937%) hue-rotate(210deg) brightness(97%) contrast(107%);
+}
+
+.service-item h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+}
+
+.btn-emergency {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 1rem;
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+.btn-emergency:hover {
+    background-color: var(--secondary-blue);
+}
+
+.plans-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.plan-item {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: var(--transition);
+    border: 2px solid var(--light-blue);
+}
+
+.plan-item.featured {
+    border-color: var(--primary-blue);
+    transform: translateY(-10px);
+}
+
+.plan-item h3 {
+    color: var(--primary-blue);
+    margin-bottom: 1.5rem;
+}
+
+.plan-item ul {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+
+.plan-item ul li {
+    margin-bottom: 0.75rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.plan-item ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--primary-blue);
+}
+
+.contact-section {
+    text-align: center;
+}
+
+.contact-options {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.btn-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    background-color: var(--white);
+    color: var(--primary-blue);
+    text-decoration: none;
+    border-radius: 8px;
+    border: 2px solid var(--light-blue);
+    transition: var(--transition);
+}
+
+.btn-contact:hover {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    border-color: var(--primary-blue);
+}
+
+.btn-contact img {
+    width: 24px;
+    height: 24px;
+    filter: invert(31%) sepia(98%) saturate(1937%) hue-rotate(210deg) brightness(97%) contrast(107%);
+}
+
+.btn-contact:hover img {
+    filter: brightness(0) invert(1);
+}
+
+@media (max-width: 768px) {
+    .services-grid,
+    .plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-options {
+        flex-direction: column;
+    }
+
+    .plan-item.featured {
+        transform: none;
+    }
+}
