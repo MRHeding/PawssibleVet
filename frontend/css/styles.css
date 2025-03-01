@@ -49,6 +49,11 @@ nav {
     gap: 0.5rem;
 }
 
+.logo img {
+    width: 50px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
 nav ul {
     display: flex;
     gap: 2rem;
@@ -236,5 +241,3 @@ footer {
     background-color: var(--secondary-blue);
     color: var(--white) !important;
 }
-
-
