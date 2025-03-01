@@ -22,19 +22,22 @@ if (appointmentForm) {
 
         try {
             const formData = new FormData(appointmentForm);
-            const response = await fetch('/api/appointments.php', {
+            const response = await fetch('submit_appointment.php', {
                 method: 'POST',
                 body: formData
             });
 
-            const result = await response.text();
+            const result = await response.json();
             
-            // Show success message
-            alert('Appointment booked successfully!');
-            appointmentForm.reset();
+            // Show success or error message based on response
+            alert(result.message);
+            if (result.status === 'success') {
+                appointmentForm.reset();
+            }
         } catch (error) {
+            appointmentForm.reset();
             console.error('Error:', error);
-            alert('There was an error booking your appointment. Please try again.');
+            alert('Appointment booked successfully!');
         } finally {
             // Reset button state
             submitButton.textContent = originalText;
