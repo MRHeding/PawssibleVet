@@ -2,7 +2,7 @@
 session_start();
 // Check if admin is logged in
 if (!isset($_SESSION['admin_id'])) {
-    header("Location: ../admin-login.php");
+    header("Location: admin-login.php");
     exit();
 }
 ?>
@@ -75,84 +75,8 @@ if (!isset($_SESSION['admin_id'])) {
                     </div>
                 </div>
             </div>
-
-            <!-- Appointments Section -->
-            <div class="dashboard-section" id="appointments">
-                <h2>Appointments Management</h2>
-                <div class="action-bar">
-                    <input type="date" id="appointment-date-filter">
-                    <select id="appointment-status-filter">
-                        <option value="">All Status</option>
-                        <option value="pending">Pending</option>
-                        <option value="confirmed">Confirmed</option>
-                        <option value="completed">Completed</option>
-                        <option value="cancelled">Cancelled</option>
-                    </select>
-                </div>
-                <div class="table-responsive">
-                    <table id="appointments-table">
-                        <thead>
-                            <tr>
-                                <th>Date & Time</th>
-                                <th>Pet Owner</th>
-                                <th>Pet Name</th>
-                                <th>Service</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Appointments will be loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <!-- Messages Section -->
-            <div class="dashboard-section" id="messages">
-                <h2>Contact Messages</h2>
-                <div class="action-bar">
-                    <input type="text" id="message-search" placeholder="Search messages...">
-                    <select id="message-status-filter">
-                        <option value="">All Messages</option>
-                        <option value="unread">Unread</option>
-                        <option value="read">Read</option>
-                    </select>
-                </div>
-                <div class="messages-container">
-                    <!-- Messages will be loaded here -->
-                </div>
-            </div>
-
-            <!-- Inventory Section -->
-            <div class="dashboard-section" id="inventory">
-                <h2>Inventory Management</h2>
-                <div class="action-bar">
-                    <button id="add-inventory-item" class="btn-primary">
-                        <i class="fas fa-plus"></i> Add New Item
-                    </button>
-                    <input type="text" id="inventory-search" placeholder="Search inventory...">
-                </div>
-                <div class="table-responsive">
-                    <table id="inventory-table">
-                        <thead>
-                            <tr>
-                                <th>Item Name</th>
-                                <th>Category</th>
-                                <th>Quantity</th>
-                                <th>Unit Price</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Inventory items will be loaded here -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
         </div>
     </div>
-
+    <script src="js/dashboard.js"></script>
 </body>
 </html>

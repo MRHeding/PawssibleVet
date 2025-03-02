@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $update_stmt->close();
 
                 // Redirect to admin dashboard
-                header("Location: admin.html");
+                header("Location: admin_dashboard.php");
                 exit();
             }
         }
