@@ -92,6 +92,8 @@ function validateForm() {
             input.classList.remove('error');
         });
     });
+    
 }
+
 
 validateForm();
